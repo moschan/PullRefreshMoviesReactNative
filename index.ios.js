@@ -59,7 +59,10 @@ var PullRefreshMoviesReactNative = React.createClass({
 
     return (
       <View style={styles.wrap}>
-        <PTRView onRefresh={this.fetchData} >
+        <PTRView
+        onRefresh={this.fetchData}
+        delay={1000} // If you want to disp loading effect clealy for UX, you can add delay params
+        >
           <ListView
             dataSource={this.state.dataSource}
             renderRow={this.renderMovie}
@@ -100,6 +103,7 @@ var styles = StyleSheet.create({
   wrap: {
     flex: 1,
     marginTop: 20,
+    backgroundColor: '#F5FCFF',
   },
   container: {
     flex: 1,
